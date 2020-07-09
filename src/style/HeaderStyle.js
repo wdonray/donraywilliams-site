@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: config.colors.red,
     flexGrow: 1,
+    cursor: 'pointer',
   },
   links: {
       marginRight: 20,
@@ -27,7 +28,8 @@ export const ColorLink = withStyles((theme) => ({
 
 export const ColorAppBar = withStyles((theme) => ({
     root: {
-        backgroundColor: config.colors.black
+        backgroundColor: config.colors.black,
+        height: config.navHeight
     }
 }))(AppBar)
 
