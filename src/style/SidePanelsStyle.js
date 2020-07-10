@@ -1,37 +1,52 @@
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import config from "../data/config";
+import { Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    position: "absolute",
-    bottom: "0px",
-    width: "100vw",
-  },
-  leftPanel: {
-    float: "left",
-    height: "35px",
-    textAlign: "left",
-    color: config.colors.white,
-    transform: "rotate(-90deg)",
+  socialLinksList: {
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
+    padding: 0,
+    margin: 0,
+    listStyle: "none",
   },
-  rightPanel: {
-    float: "right",
-    height: "35px",
-    textAlign: "right",
-    color: config.colors.white,
-    transform: "rotate(90deg) translate(-20%)",
+  linkWrapper: {
     display: "flex",
+    flexDirection: "column",
     alignItems: "center",
-  },
-  line: {
-    backgroundColor: config.colors.gray,
-    height: "3px",
-    width: "150px",
-    margin: "10px",
+    position: "relative",
   },
 }));
+
+export const EmailLink = withStyles((theme) => ({
+  root: {
+    letterSpacing: "0.1em",
+    writingMode: "vertical-rl",
+    color: config.colors.white,
+    transition: "color 0.3s ease",
+    "&:hover": {
+      color: config.colors.blue,
+    },
+    "&:hover, &:focus": {
+      transform: "translateY(-3px)",
+    },
+  },
+}))(Link);
+
+export const SocialLink = withStyles((theme) => ({
+  root: {
+    padding: "10px",
+    letterSpacing: "0.1em",
+    color: config.colors.white,
+    transition: "color 0.3s ease",
+    "&:hover": {
+      color: config.colors.blue,
+    },
+    "&:hover, &:focus": {
+      transform: "translateY(-3px)",
+    },
+  },
+}))(Link);
 
 export default useStyles;
