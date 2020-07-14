@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Toolbar, Typography } from "@material-ui/core";
+import { Toolbar, Typography, Container } from "@material-ui/core";
 import useStyles, {
   ColorButton,
   ColorAppBar,
@@ -34,13 +34,12 @@ const Header = () => {
             item && (
               <animated.div key={key} style={props}>
                 <Toolbar>
-                  <Typography
-                    variant="h6"
+                  <div
                     onClick={() => history.push("/")}
                     className={classes.title}
                   >
                     Donray Williams
-                  </Typography>
+                  </div>
                   {_.map(_.slice(config.navLinks, 1), (x, id) => (
                     <div className={classes.links} key={x.url}>
                       <ColorLink underline="none" href={x.url}>
