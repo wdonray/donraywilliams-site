@@ -12,12 +12,16 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     cursor: "pointer",
     letterSpacing: "0.1em",
-    fontSize: '1.5vw',
+    "@media (min-device-width: 1224px)": {
+      marginRight: 10,
+    },
   },
   links: {
-    marginRight: 20,
+    marginRight: 10,
+    "@media (min-device-width: 1224px)": {
+      marginRight: 20,
+    },
     color: config.colors.white,
-    fontSize: '1vw',
   },
 }));
 
@@ -40,9 +44,6 @@ export const ColorAppBar = withStyles((theme) => ({
 
 export const ColorButton = withStyles((theme) => ({
   root: {
-    minHeight: 'auto',
-    minWidth: '2vw',
-    fontSize: '1vw',
     color: config.colors.white,
     borderColor: config.colors.orange,
     "&:hover": {

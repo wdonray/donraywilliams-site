@@ -4,17 +4,43 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Layout from "./components/Layout";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import {
+  ThemeProvider,
+  createMuiTheme,
+  responsiveFontSizes,
+} from "@material-ui/core/styles";
 import config from "../src/data/config";
 
 import { BrowserRouter as Router } from "react-router-dom";
-const theme = createMuiTheme({
+let theme = createMuiTheme({
+  typography: {
+    h6: {
+      fontSize: ".8rem",
+      "@media (min-device-width: 1224px)": {
+        fontSize: "1.5rem",
+      },
+    },
+    body2: {
+      fontSize: ".7rem",
+      "@media (min-device-width: 1224px)": {
+        fontSize: "1rem",
+      },
+    },
+    button: {
+      fontSize: ".7rem",
+      "@media (min-device-width: 1224px)": {
+        fontSize: "1rem",
+      },
+    },
+  },
   palette: {
     background: {
       default: config.colors.black,
     },
   },
 });
+
+// theme = responsiveFontSizes(theme);
 
 ReactDOM.render(
   <React.StrictMode>

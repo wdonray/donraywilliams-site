@@ -1,12 +1,14 @@
-import { makeStyles, withStyles } from "@material-ui/core/styles";
-import config from "../data/config";
+import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((orientation) => ({
+const useStyles = makeStyles(() => ({
   left: {
     width: "40px",
     position: "fixed",
     bottom: 0,
-    left: "40px",
+    left: "20px",
+    "@media (min-device-width: 1224px)": {
+      left: "40px",
+    },
     right: "auto",
     zIndex: 10,
     marginBottom: '50px'
@@ -15,7 +17,10 @@ const useStyles = makeStyles((orientation) => ({
     width: "40px",
     position: "fixed",
     bottom: 0,
-    right: "40px",
+    right: "20px",
+    "@media (min-device-width: 1224px)": {
+      right: "40px",
+    },
     left: "auto",
     zIndex: 10,
     marginBottom: '50px'

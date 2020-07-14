@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Toolbar, Typography, Container } from "@material-ui/core";
+import { Toolbar, Typography } from "@material-ui/core";
 import useStyles, {
   ColorButton,
   ColorAppBar,
@@ -16,14 +16,14 @@ const Header = () => {
   let history = useHistory();
   const [show, set] = useState(false);
   const transitions = useTransition(show, null, {
-    from: {opacity: 0 },
+    from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
   });
-  
+
   useEffect(() => {
-    set(true)
-  })
+    set(true);
+  });
 
   return (
     <div className={classes.root}>
@@ -34,19 +34,22 @@ const Header = () => {
             item && (
               <animated.div key={key} style={props}>
                 <Toolbar>
-                  <div
+                  <Typography
+                    variant="h6"
                     onClick={() => history.push("/")}
                     className={classes.title}
                   >
                     Donray Williams
-                  </div>
+                  </Typography>
                   {_.map(_.slice(config.navLinks, 1), (x, id) => (
                     <div className={classes.links} key={x.url}>
                       <ColorLink underline="none" href={x.url}>
-                        <span style={{ color: config.colors.red }}>{`0${
-                          id + 1
-                        }. `}</span>
-                        {`${x.name}`}
+                        <Typography variant="body2">
+                          <span style={{ color: config.colors.red }}>{`0${
+                            id + 1
+                          }. `}</span>
+                          {`${x.name}`}
+                        </Typography>
                       </ColorLink>
                     </div>
                   ))}
@@ -54,7 +57,7 @@ const Header = () => {
                     onClick={() => window.open(Resume)}
                     variant="outlined"
                   >
-                    Resume
+                    <Typography variant="button">Resume</Typography>
                   </ColorButton>
                 </Toolbar>
               </animated.div>
