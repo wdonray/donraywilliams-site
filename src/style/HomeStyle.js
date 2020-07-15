@@ -4,22 +4,40 @@ import { Button, Link } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "auto%",
-    height: "auto",
-    margin: "200px",
+    width: "100%",
+    height: "100%",
     // backgroundColor: "red",
+    textAlign: "left",
+    padding: "5vh 5vw 0 5vw",
     "@media (min-device-width: 1224px)": {
-      //   backgroundColor: "blue",
+      padding: "15vh 15vw 0 15vw",
+      // backgroundColor: "blue",
     },
   },
   intro: {
     color: config.colors.red,
+    letterSpacing: "0.1em",
   },
   name: {
-    color: config.colors.red,
+    color: config.colors.white,
+    letterSpacing: "0.1em",
   },
-  subName: {},
-  body: {},
+  subName: {
+    color: config.colors.white,
+    opacity: "0.8",
+    marginBottom: "10px",
+    letterSpacing: "0.1em",
+  },
+  body: {
+    color: config.colors.white,
+    opacity: "0.8",
+    marginBottom: "30px",
+    letterSpacing: "0.1em",
+    "@media (min-device-width: 1224px)": {
+      paddingRight: "30vw",
+      letterSpacing: "0.1em",
+    },
+  },
 }));
 
 export const ColorButton = withStyles((theme) => ({

@@ -14,6 +14,18 @@ import config from "../src/data/config";
 import { BrowserRouter as Router } from "react-router-dom";
 let theme = createMuiTheme({
   typography: {
+    h1: {
+      fontSize: "2rem",
+      "@media (min-device-width: 1224px)": {
+        fontSize: "5rem",
+      },
+    },
+    h2: {
+      fontSize: "1.5rem",
+      "@media (min-device-width: 1224px)": {
+        fontSize: "4rem",
+      },
+    },
     h6: {
       fontSize: ".8rem",
       "@media (min-device-width: 1224px)": {

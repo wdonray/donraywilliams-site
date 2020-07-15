@@ -7,11 +7,20 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  title: {
-    color: config.colors.red,
+  titleContainer: {
     flexGrow: 1,
+    "@media (min-device-width: 1224px)": {
+      marginRight: 10,
+    },
+  },
+  title: {
+    width: '50%',
+    color: config.colors.red,
     cursor: "pointer",
     letterSpacing: "0.1em",
+  },
+  logo: {
+    cursor: "pointer",
     "@media (min-device-width: 1224px)": {
       marginRight: 10,
     },
@@ -23,6 +32,13 @@ const useStyles = makeStyles((theme) => ({
     },
     color: config.colors.white,
   },
+  drawer: {
+    
+  },
+  drawerPaper: {
+    width: '50vw',
+    backgroundColor: config.colors.black
+  }
 }));
 
 export const ColorLink = withStyles((theme) => ({
