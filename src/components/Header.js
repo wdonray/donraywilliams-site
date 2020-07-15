@@ -5,7 +5,7 @@ import {
   SvgIcon,
   Drawer,
   IconButton,
-  Divider,
+  ClickAwayListener,
   List,
   ListItem,
   ListItemText,
@@ -14,6 +14,7 @@ import useStyles, {
   ColorButton,
   ColorAppBar,
   ColorLink,
+  ColorDivider,
 } from "../style/HeaderStyle";
 import Resume from "../data/Resume.pdf";
 import * as _ from "lodash";
@@ -76,54 +77,62 @@ const Header = () => {
                   {/* <img className={classes.logo} src={Logo} alt={'Logo'}/> */}
                   {!isDesktopOrLaptop ? (
                     <React.Fragment>
-                      <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        className={clsx(
-                          classes.menuButton,
-                          open && classes.hide
-                        )}
+                      <ClickAwayListener
+                        onClickAway={handleDrawerClose}
                       >
-                        <MenuIcon />
-                      </IconButton>
-                      <Drawer
-                        className={classes.drawer}
-                        variant="persistent"
-                        anchor="right"
-                        open={open}
-                        classes={{
-                          paper: classes.drawerPaper,
-                        }}
-                      >
-                        <div className={classes.drawerHeader}>
-                          <IconButton onClick={handleDrawerClose}>
-                            {open ? <CloseIcon style={{color: config.colors.white}} /> : <ChevronRightIcon />}
+                        <div>
+                          <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            className={clsx(
+                              classes.menuButton,
+                              open && classes.hide
+                            )}
+                          >
+                            <MenuIcon />
                           </IconButton>
+                          <Drawer
+                            className={classes.drawer}
+                            variant="persistent"
+                            anchor="right"
+                            open={open}
+                            classes={{
+                              paper: classes.drawerPaper,
+                            }}
+                          >
+                            <div className={classes.drawerHeader}>
+                              <IconButton onClick={handleDrawerClose}>
+                                <CloseIcon
+                                  style={{ color: config.colors.white }}
+                                />
+                              </IconButton>
+                            </div>
+                            <List>
+                              {_.map(_.slice(config.navLinks, 1), (x, id) => (
+                                <ListItem className={classes.links} key={x.url}>
+                                  <ColorLink underline="none" href={x.url}>
+                                    <ListItemText variant="body2">
+                                      <span
+                                        style={{ color: config.colors.red }}
+                                      >{`0${id + 1}. `}</span>
+                                      {`${x.name}`}
+                                    </ListItemText>
+                                  </ColorLink>
+                                </ListItem>
+                              ))}
+                            </List>
+                            <ColorDivider />
+                            <ColorButton
+                              onClick={() => window.open(Resume)}
+                              variant="outlined"
+                            >
+                              <Typography variant="button">Resume</Typography>
+                            </ColorButton>
+                          </Drawer>
                         </div>
-                        <Divider />
-                        <List>
-                          {_.map(_.slice(config.navLinks, 1), (x, id) => (
-                            <ListItem className={classes.links} key={x.url}>
-                              <ColorLink underline="none" href={x.url}>
-                                <ListItemText variant="body2">
-                                  <span
-                                    style={{ color: config.colors.red }}
-                                  >{`0${id + 1}. `}</span>
-                                  {`${x.name}`}
-                                </ListItemText>
-                              </ColorLink>
-                            </ListItem>
-                          ))}
-                        </List>
-                        <ColorButton
-                          onClick={() => window.open(Resume)}
-                          variant="outlined"
-                        >
-                          <Typography variant="button">Resume</Typography>
-                        </ColorButton>
-                      </Drawer>
+                      </ClickAwayListener>
                     </React.Fragment>
                   ) : (
                     <React.Fragment>

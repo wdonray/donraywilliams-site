@@ -50,6 +50,12 @@ let theme = createMuiTheme({
         fontSize: "1rem",
       },
     },
+    caption: {
+      fontSize: ".6rem",
+      "@media (min-device-width: 1224px)": {
+        fontSize: ".8rem",
+      }
+    }
   },
   palette: {
     background: {

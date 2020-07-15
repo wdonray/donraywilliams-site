@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import Header from "./Header";
+import Footer from './Footer'
 import { Switch, Route } from "react-router-dom";
 import * as _ from "lodash";
 import config from "../data/config";
@@ -19,6 +20,7 @@ const Layout = () => {
       <Header />
       <div style={{ marginTop: config.navHeight }} />
       <SidePanels/>
+      <Footer/>
       {_.map(transitions, ({ item, props, key }) => (
         <animated.div key={key} style={props}>
           <Suspense fallback={<div>Loading...</div>}>

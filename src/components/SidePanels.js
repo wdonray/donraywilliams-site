@@ -48,7 +48,11 @@ const SidePanels = () => {
           </SideComponent>
           <SideComponent orientation="right">
             <div className={classes.linkWrapper}>
-              <EmailLink underline="none" href={`mailto:${config.email}`}>
+              <EmailLink
+                underline="none"
+                target="_blank"
+                href={`mailto:${config.email}`}
+              >
                 <Typography variant="body2">{config.email}</Typography>
               </EmailLink>
             </div>

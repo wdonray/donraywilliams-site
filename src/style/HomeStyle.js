@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     // backgroundColor: "red",
     textAlign: "left",
-    padding: "5vh 5vw 0 5vw",
+    padding: "10vh 5vw 0 5vw",
     "@media (min-device-width: 1224px)": {
       padding: "15vh 15vw 0 15vw",
       // backgroundColor: "blue",

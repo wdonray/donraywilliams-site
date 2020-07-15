@@ -1,5 +1,5 @@
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { Button, AppBar, Link } from "@material-ui/core";
+import { Button, AppBar, Link, Divider } from "@material-ui/core";
 import config from "../data/config";
 // import {isDesktopOrLaptop} from "../util/sizeMatters"
 
@@ -62,11 +62,24 @@ export const ColorButton = withStyles((theme) => ({
   root: {
     color: config.colors.white,
     borderColor: config.colors.orange,
+    width: '25vw',
+    marginLeft: '11vw',
+    "@media (min-device-width: 1224px)": {
+      width: 'auto',
+      marginLeft: '0',
+    },
     "&:hover": {
       backgroundColor: config.colors.gray,
       color: config.colors.red,
     },
   },
 }))(Button);
+
+export const ColorDivider = withStyles(() => ({
+  root: {
+    backgroundColor: config.colors.white,
+    marginBottom: '10px'
+  }
+}))(Divider)
 
 export default useStyles;
