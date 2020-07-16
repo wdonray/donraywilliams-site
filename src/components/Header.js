@@ -24,7 +24,6 @@ import { useHistory } from "react-router-dom";
 import { animated, useTransition } from "react-spring";
 import { useMediaQuery } from "react-responsive";
 import CloseIcon from "@material-ui/icons/Close";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../data/logo.png";
 
