@@ -80,6 +80,7 @@ export const ColorButton = withStyles((theme) => ({
     },
     "&:hover": {
       backgroundColor: config.colors.blue,
+      color: config.colors.redSplitComplementary.teal,
     },
   },
 }))(Button);

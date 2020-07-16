@@ -8,11 +8,11 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     // backgroundColor: "red",
     textAlign: "left",
-    padding: "10vh 5vw 0 5vw",
+    padding: "1vh 5vw 30vh 5vw",
     "@media (min-device-width: 1224px)": {
       padding: "10vh 5vw 0 5vw",
       // backgroundColor: "yellow",
-      display: 'flex'
+      //display: 'flex'
     },
   },
   content: { },
@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
   },
   subName: {
     color: config.colors.white,
-
     marginBottom: "10px",
     letterSpacing: "0.1em",
   },
