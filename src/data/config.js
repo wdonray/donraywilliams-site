@@ -3,7 +3,7 @@ import React, { lazy } from "react";
 export default {
   siteTitle: "Donray Williams | Software Engineer",
   siteDescription:
-    "Donray Williams is a software engineer based in Lafayette, LA who specializes in building (and occasionally designing) exceptional websites, applications, and everything in between.",
+    "I specialize in building (and occasionally designing) exceptional websites, applications, and everything in between.",
   siteKeywords:
     "Donray Williams, Donray, Williams, wdonray, software engineer, front-end engineer, web developer, javascript",
   siteUrl: "https://donrayxwilliams.com",
@@ -57,13 +57,18 @@ export default {
   navHeight: 64,
 
   colors: {
-    black: "#302d2dff",
+    black: "#1A202C",
     orange: "#f6863bff",
     green: "#0ed59eff",
-    blue: "#493ebfff",
+    blue: "#6666e0",
     gray: "#666666ff",
     white: "#ffffffff",
     red: "#e06666ff",
+    lightGreen: '#66e066',
+    redSplitComplementary: {
+      teal: '#66e0e0',
+      green: '#a3e066'
+    }
   },
 
   srConfig: (delay = 200) => ({

@@ -22,11 +22,11 @@ import config from "../data/config";
 import clsx from "clsx";
 import { useHistory } from "react-router-dom";
 import { animated, useTransition } from "react-spring";
-import Logo from "../data/logo.svg";
 import { useMediaQuery } from "react-responsive";
 import CloseIcon from "@material-ui/icons/Close";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import MenuIcon from "@material-ui/icons/Menu";
+import logo from "../data/logo.png";
 
 const Header = () => {
   const classes = useStyles();
@@ -65,21 +65,18 @@ const Header = () => {
               <animated.div key={key} style={props}>
                 <Toolbar>
                   <div className={classes.titleContainer}>
-                    <Typography
-                      variant="h6"
+                    <img
+                      className={classes.logo}
                       onClick={() => history.push("/")}
-                      className={classes.title}
-                    >
-                      Donray Williams
-                    </Typography>
+                      src={logo}
+                      alt={"Logo"}
+                    />
                   </div>
                   {/* <SvgIcon component={Logo} fontSize="large" /> */}
                   {/* <img className={classes.logo} src={Logo} alt={'Logo'}/> */}
                   {!isDesktopOrLaptop ? (
                     <React.Fragment>
-                      <ClickAwayListener
-                        onClickAway={handleDrawerClose}
-                      >
+                      <ClickAwayListener onClickAway={handleDrawerClose}>
                         <div>
                           <IconButton
                             color="inherit"
@@ -113,21 +110,17 @@ const Header = () => {
                               {_.map(_.slice(config.navLinks, 1), (x, id) => (
                                 <ListItem className={classes.links} key={x.url}>
                                   <ColorLink underline="none" href={x.url}>
-                                    <ListItemText variant="body2">
-                                      <span
-                                        style={{ color: config.colors.red }}
-                                      >{`0${id + 1}. `}</span>
-                                      {`${x.name}`}
+                                    <ListItemText>
+                                      <Typography variant="body2">
+                                        {x.name}
+                                      </Typography>
                                     </ListItemText>
                                   </ColorLink>
                                 </ListItem>
                               ))}
                             </List>
                             <ColorDivider />
-                            <ColorButton
-                              onClick={() => window.open(Resume)}
-                              variant="outlined"
-                            >
+                            <ColorButton onClick={() => window.open(Resume)}>
                               <Typography variant="button">Resume</Typography>
                             </ColorButton>
                           </Drawer>
@@ -139,20 +132,15 @@ const Header = () => {
                       {_.map(_.slice(config.navLinks, 1), (x, id) => (
                         <div className={classes.links} key={x.url}>
                           <ColorLink underline="none" href={x.url}>
-                            <Typography variant="body2">
-                              <span style={{ color: config.colors.red }}>{`0${
-                                id + 1
-                              }. `}</span>
-                              {`${x.name}`}
-                            </Typography>
+                            <Typography variant="body2">{x.name}</Typography>
                           </ColorLink>
                         </div>
                       ))}
                       <ColorButton
                         onClick={() => window.open(Resume)}
-                        variant="outlined"
+                        variant="contained"
                       >
-                        <Typography variant="button">Resume</Typography>
+                        Resume
                       </ColorButton>
                     </React.Fragment>
                   )}

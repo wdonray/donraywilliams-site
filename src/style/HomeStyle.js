@@ -10,21 +10,33 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     padding: "10vh 5vw 0 5vw",
     "@media (min-device-width: 1224px)": {
-      padding: "15vh 15vw 0 15vw",
-      // backgroundColor: "blue",
+      padding: "10vh 5vw 0 5vw",
+      // backgroundColor: "yellow",
+      display: 'flex'
     },
+  },
+  content: { },
+  logoContainer: { },
+  logo: {
+    padding: '3vh 0 0 7vw',
+    width: "60vw",
+    height: "auto",
+    "@media (min-device-width: 1224px)": { 
+      padding: '0',
+      width: "40vw",
+    }
   },
   intro: {
     color: config.colors.red,
     letterSpacing: "0.1em",
   },
   name: {
-    color: config.colors.white,
+    color: config.colors.blue,
     letterSpacing: "0.1em",
   },
   subName: {
     color: config.colors.white,
-    opacity: "0.8",
+
     marginBottom: "10px",
     letterSpacing: "0.1em",
   },
@@ -34,20 +46,31 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "30px",
     letterSpacing: "0.1em",
     "@media (min-device-width: 1224px)": {
-      paddingRight: "30vw",
+      paddingRight: "15vw",
       letterSpacing: "0.1em",
     },
   },
+  buttonContainer: {
+    display: "flex",
+  },
+  button: {
+    marginRight: "10px",
+  },
 }));
 
-export const ColorButton = withStyles((theme) => ({
+export const NormalButton = withStyles((theme) => ({
   root: {
     color: config.colors.white,
-    borderColor: config.colors.orange,
-    "&:hover": {
-      backgroundColor: config.colors.gray,
-      color: config.colors.red,
-    },
+    textTransform: "none",
+    backgroundColor: config.colors.blue,
+  },
+}))(Button);
+
+export const LightButton = withStyles((theme) => ({
+  root: {
+    color: config.colors.white,
+    textTransform: "none",
+    backgroundColor: config.colors.gray,
   },
 }))(Button);
 

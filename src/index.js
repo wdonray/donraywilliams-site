@@ -62,6 +62,9 @@ let theme = createMuiTheme({
       default: config.colors.black,
     },
   },
+  button: {
+    textTransform: 'none'
+  }
 });
 
 // theme = responsiveFontSizes(theme);

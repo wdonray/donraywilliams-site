@@ -14,15 +14,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    width: '50%',
-    color: config.colors.red,
+    width: "50%",
+    color: config.colors.white,
     cursor: "pointer",
     letterSpacing: "0.1em",
   },
   logo: {
+    width: '15vw',
+    height: 'auto',
     cursor: "pointer",
+    paddingTop: '.8vh',
     "@media (min-device-width: 1224px)": {
+      paddingTop: '1vh',
       marginRight: 10,
+      width: '7vw',
+      height: 'auto',
     },
   },
   links: {
@@ -32,13 +38,11 @@ const useStyles = makeStyles((theme) => ({
     },
     color: config.colors.white,
   },
-  drawer: {
-    
-  },
+  drawer: {},
   drawerPaper: {
-    width: '50vw',
-    backgroundColor: config.colors.black
-  }
+    width: "50vw",
+    backgroundColor: config.colors.black,
+  },
 }));
 
 export const ColorLink = withStyles((theme) => ({
@@ -46,31 +50,36 @@ export const ColorLink = withStyles((theme) => ({
     letterSpacing: "0.1em",
     color: config.colors.white,
     "&:hover": {
-      color: config.colors.red,
+      color: config.colors.redSplitComplementary.teal,
     },
   },
 }))(Link);
 
 export const ColorAppBar = withStyles((theme) => ({
   root: {
-    backgroundColor: config.colors.black,
-    height: config.navHeight,
+    backgroundColor: config.colors.red,
+    height: '8vh',
+    "@media (min-device-width: 1224px)": {
+      height: config.navHeight,
+    },
   },
 }))(AppBar);
 
 export const ColorButton = withStyles((theme) => ({
   root: {
     color: config.colors.white,
-    borderColor: config.colors.orange,
-    width: '25vw',
-    marginLeft: '11vw',
+    borderColor: config.colors.redSplitComplementary.teal,
+    backgroundColor: config.colors.blue,
+    textTransform: "none",
+    width: "25vw",
+    marginLeft: "11vw",
     "@media (min-device-width: 1224px)": {
-      width: 'auto',
-      marginLeft: '0',
+      width: "auto",
+      marginLeft: "0",
+      textTransform: "none",
     },
     "&:hover": {
-      backgroundColor: config.colors.gray,
-      color: config.colors.red,
+      backgroundColor: config.colors.blue,
     },
   },
 }))(Button);
@@ -78,8 +87,8 @@ export const ColorButton = withStyles((theme) => ({
 export const ColorDivider = withStyles(() => ({
   root: {
     backgroundColor: config.colors.white,
-    marginBottom: '10px'
-  }
-}))(Divider)
+    marginBottom: "10px",
+  },
+}))(Divider);
 
 export default useStyles;
