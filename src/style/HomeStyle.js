@@ -5,7 +5,7 @@ import { Button, Link } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    height: 'auto',
+    height: '100%',
     textAlign: "left",
     padding: "1vh 5vw 30vh 5vw",
     display: 'flex',
