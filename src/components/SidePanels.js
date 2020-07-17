@@ -1,18 +1,15 @@
 import React from "react";
 import useStyles, { EmailLink, SocialLink } from "../style/SidePanelsStyle";
-import config from "../data/config";
 import * as _ from "lodash";
 import SideComponent from "./SideComponent";
 import Icon from "@material-ui/core/Icon";
 import { loadCSS } from "fg-loadcss";
 import { Typography } from "@material-ui/core";
-import { useMediaQuery } from "react-responsive";
+import { useHistory } from "react-router-dom";
 
-const SidePanels = () => {
+const SidePanels = ({ direction, isDesktopOrLaptop, config }) => {
+  let history = useHistory();
   const classes = useStyles();
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-device-width: 1224px)",
-  });
   React.useEffect(() => {
     const node = loadCSS(
       "https://use.fontawesome.com/releases/v5.12.0/css/all.css",

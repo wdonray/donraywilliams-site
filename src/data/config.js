@@ -1,4 +1,9 @@
 import React, { lazy } from "react";
+import Home from "../components/Home";
+import About from "../components/About";
+import Experience from "../components/Experience";
+import Work from "../components/Work";
+import Contact from "../components/Contact";
 
 export default {
   siteTitle: "Donray Williams | Software Engineer",
@@ -7,10 +12,22 @@ export default {
   siteKeywords:
     "Donray Williams, Donray, Williams, wdonray, software engineer, front-end engineer, web developer, javascript",
   siteUrl: "https://donrayxwilliams.com",
+  aboutMe:
+    "Hello! I'm Donray, a software engineer based in Lafayette, LA.\nI enjoy working on websites, apps, and occasionally games. My goal as a developer is to expand my knowledge daily, whether it’s at home or on the job.\nWhile in college at AIE, I served as a tutor during the semester and a teacher over the summer. Shortly after, I got my first job at BUH! Gaming collaborating with a small team remotely. This job as well as a few others led me to obtain a position at Stuller, the number one jewelry manufacturer in America. Here I gained a variety of skills and delved into interesting and meaningful projects on a daily basis.\nFollowing are a few technologies I've been working with recently:",
   siteLanguage: "en_US",
   name: "Donray Williams",
   location: "Lafayette, LA",
   email: "donrayxwilliams@gmail.com",
+  skills: [
+    "JavaScript (ES6+)",
+    "React",
+    "React-Native",
+    "HTML & CSS",
+    "AWS",
+    "Serverless",
+    "Redux",
+    "Type-script",
+  ],
   socialMedia: [
     {
       name: "GitHub",
@@ -30,27 +47,27 @@ export default {
     {
       name: "Home",
       url: "/",
-      component: lazy(() => import("../components/Home")),
+      component: Home,
     },
     {
       name: "About",
       url: "/about",
-      component: lazy(() => import("../components/About")),
+      component: About,
     },
     {
       name: "Experience",
       url: "/experience",
-      component: lazy(() => import("../components/Experience")),
+      component: Experience,
     },
     {
       name: "Work",
       url: "/work",
-      component: lazy(() => import("../components/Work")),
+      component: Work,
     },
     {
       name: "Contact",
       url: "/contact",
-      component: lazy(() => import("../components/Contact")),
+      component: Contact,
     },
   ],
 
@@ -64,11 +81,11 @@ export default {
     gray: "#666666ff",
     white: "#ffffffff",
     red: "#e06666ff",
-    lightGreen: '#66e066',
+    lightGreen: "#66e066",
     redSplitComplementary: {
-      teal: '#66e0e0',
-      green: '#a3e066'
-    }
+      teal: "#66e0e0",
+      green: "#a3e066",
+    },
   },
 
   srConfig: (delay = 200) => ({

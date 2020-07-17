@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import {
   Toolbar,
   Typography,
-  SvgIcon,
   Drawer,
   IconButton,
   ClickAwayListener,
@@ -18,21 +17,16 @@ import useStyles, {
 } from "../style/HeaderStyle";
 import Resume from "../data/Resume.pdf";
 import * as _ from "lodash";
-import config from "../data/config";
 import clsx from "clsx";
-import { useHistory } from "react-router-dom";
 import { animated, useTransition } from "react-spring";
-import { useMediaQuery } from "react-responsive";
 import CloseIcon from "@material-ui/icons/Close";
 import MenuIcon from "@material-ui/icons/Menu";
 import logo from "../data/Logo.png";
+import { useHistory } from "react-router-dom";
 
-const Header = () => {
-  const classes = useStyles();
+const Header = ({ isDesktopOrLaptop, config }) => {
   let history = useHistory();
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-device-width: 1224px)",
-  });
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -62,8 +56,8 @@ const Header = () => {
           ({ item, key, props }) =>
             item && (
               <animated.div key={key} style={props}>
-                <Toolbar>
-                  <div className={classes.titleContainer}>
+                <Toolbar className={classes.toolBar}>
+                  <div className={classes.logoContainer}>
                     <img
                       className={classes.logo}
                       onClick={() => history.push("/")}
@@ -71,10 +65,8 @@ const Header = () => {
                       alt={"Logo"}
                     />
                   </div>
-                  {/* <SvgIcon component={Logo} fontSize="large" /> */}
-                  {/* <img className={classes.logo} src={Logo} alt={'Logo'}/> */}
                   {!isDesktopOrLaptop ? (
-                    <React.Fragment>
+                    <div className={classes.rightContainer}>
                       <ClickAwayListener onClickAway={handleDrawerClose}>
                         <div>
                           <IconButton
@@ -125,9 +117,9 @@ const Header = () => {
                           </Drawer>
                         </div>
                       </ClickAwayListener>
-                    </React.Fragment>
+                    </div>
                   ) : (
-                    <React.Fragment>
+                    <div className={classes.rightContainer}>
                       {_.map(_.slice(config.navLinks, 1), (x, id) => (
                         <div className={classes.links} key={x.url}>
                           <ColorLink underline="none" href={x.url}>
@@ -141,7 +133,7 @@ const Header = () => {
                       >
                         Resume
                       </ColorButton>
-                    </React.Fragment>
+                    </div>
                   )}
                 </Toolbar>
               </animated.div>

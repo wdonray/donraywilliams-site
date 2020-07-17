@@ -5,24 +5,25 @@ import { Button, Link } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    height: "100%",
-    // backgroundColor: "red",
+    height: 'auto',
     textAlign: "left",
     padding: "1vh 5vw 30vh 5vw",
+    display: 'flex',
     "@media (min-device-width: 1224px)": {
       padding: "10vh 5vw 0 5vw",
-      // backgroundColor: "yellow",
-      //display: 'flex'
     },
   },
   content: { },
   logoContainer: { },
+  item: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   logo: {
-    padding: '3vh 0 0 7vw',
     width: "60vw",
     height: "auto",
     "@media (min-device-width: 1224px)": { 
-      padding: '0',
       width: "40vw",
     }
   },

@@ -7,8 +7,19 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  titleContainer: {
-    flexGrow: 1,
+  rightContainer: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  toolBar: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  logoContainer: {
+    display: "flex",
+    alignItems: "center",
     "@media (min-device-width: 1224px)": {
       marginRight: 10,
     },
@@ -23,9 +34,7 @@ const useStyles = makeStyles((theme) => ({
     width: '15vw',
     height: 'auto',
     cursor: "pointer",
-    paddingTop: '.8vh',
     "@media (min-device-width: 1224px)": {
-      paddingTop: '1vh',
       marginRight: 10,
       width: '7vw',
       height: 'auto',
@@ -57,6 +66,8 @@ export const ColorLink = withStyles((theme) => ({
 
 export const ColorAppBar = withStyles((theme) => ({
   root: {
+    display: 'flex',
+    justifyContent: 'center',
     backgroundColor: config.colors.red,
     height: '8vh',
     "@media (min-device-width: 1224px)": {

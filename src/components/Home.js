@@ -1,29 +1,22 @@
 import React from "react";
-import { Button, Typography, Grid } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import CenterContainer from "./CenterContainer";
 import useStyles, { NormalButton, LightButton } from "../style/HomeStyle";
-import config from "../data/config";
 import homeIll from "../data/home_ill.svg";
-import { useMediaQuery } from "react-responsive";
-import { useHistory } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ history, direction, isDesktopOrLaptop, config }) => {
   const classes = useStyles();
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-device-width: 1224px)",
-  });
-  let history = useHistory();
-  let direction = isDesktopOrLaptop ? "row" : "column";
   return (
     <CenterContainer>
-      <Grid
+      <div
         className={classes.root}
-        container
-        direction={direction}
-        justify={direction === "row" ? "flex-start" : "center"}
-        alignItems={direction === "row" ? "flex-start" : "center"}
+        style={{
+          flexDirection: direction,
+          alignItems: direction === "row" ? "flex-start" : "center",
+          justifyContent: direction === "row" ? 'center' : 'space-around',
+        }}
       >
-        <Grid item xs={direction === "row" ? 6 : false}>
+        <div className={classes.item}>
           <div className={classes.content}>
             <Typography variant="h1" className={classes.name}>
               {config.name}
@@ -52,13 +45,13 @@ const Home = () => {
               </LightButton>
             </div>
           </div>
-        </Grid>
-        <Grid item xs={direction === "row" ? 6 : false}>
+        </div>
+        <div className={classes.item}>
           <div className={classes.logoContainer}>
             <img className={classes.logo} src={homeIll} alt={"Logo"} />
           </div>
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </CenterContainer>
   );
 };
