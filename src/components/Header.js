@@ -100,7 +100,10 @@ const Header = ({ isDesktopOrLaptop, config }) => {
                             <List>
                               {_.map(_.slice(config.navLinks, 1), (x, id) => (
                                 <ListItem className={classes.links} key={x.url}>
-                                  <ColorLink underline="none" href={x.url}>
+                                  <ColorLink
+                                    underline="none"
+                                    href={x.url}
+                                  >
                                     <ListItemText>
                                       <Typography variant="body2">
                                         {x.name}
