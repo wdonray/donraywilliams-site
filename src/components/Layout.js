@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Switch, Route } from "react-router-dom";
@@ -9,19 +9,31 @@ import { useLocation } from "react-router-dom";
 import SidePanels from "./SidePanels";
 import { useMediaQuery } from "react-responsive";
 import { useHistory } from "react-router-dom";
+import { RunParticleSim, PopulateParticleArray } from "./FloatingParticles";
 
 const Layout = () => {
   const location = useLocation();
+  let history = useHistory();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 1224px)",
+  });
+  let direction = isDesktopOrLaptop ? "row" : "column";
   const transitions = useTransition(location, (location) => location.pathname, {
     from: { opacity: 0, transform: "translate3d(0, 100%, 0)" },
     enter: { opacity: 1, transform: "translate3d(0%, 0, 0)" },
     leave: { opacity: 0, transform: "translate3d(0, -50%, 0)" },
   });
-  const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-device-width: 1224px)",
-  });
-  let history = useHistory();
-  let direction = isDesktopOrLaptop ? "row" : "column";
+
+  const [size, setSize] = useState([0, 0]);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight]);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   return (
     <React.Fragment>
@@ -31,12 +43,21 @@ const Layout = () => {
         config={config}
       />
       <div
-        style={{ marginTop: isDesktopOrLaptop ? config.navHeight : "8vh" }}
-      />
+        style={{
+          marginTop: isDesktopOrLaptop ? config.navHeight : "8vh",
+          opacity: 0,
+        }}
+      >
+        {size}
+      </div>
       <SidePanels
         isDesktopOrLaptop={isDesktopOrLaptop}
         direction={direction}
         config={config}
+      />
+      <RunParticleSim
+        screenWidth={window.innerWidth}
+        screenHeight={window.innerHeight}
       />
       <Footer />
       {_.map(

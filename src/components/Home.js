@@ -1,21 +1,22 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Button, Typography } from "@material-ui/core";
 import CenterContainer from "./CenterContainer";
 import useStyles, { NormalButton, LightButton } from "../style/HomeStyle";
 import homeIll from "../data/home_ill.svg";
 import { useHistory } from "react-router-dom";
 
-const Home = ({ direction, isDesktopOrLaptop, config }) => {
+const Home = ({ direction, config }) => {
   const classes = useStyles();
   let history = useHistory();
   return (
     <CenterContainer>
+
       <div
         className={classes.root}
         style={{
           flexDirection: direction,
           alignItems: direction === "row" ? "flex-start" : "center",
-          justifyContent: direction === "row" ? 'center' : 'space-around',
+          justifyContent: direction === "row" ? "center" : "space-around",
         }}
       >
         <div className={classes.item}>

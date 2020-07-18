@@ -11,7 +11,7 @@ const CenterContainer = ({ children }) => {
         // backgroundColor: isDesktopOrLaptop ? "red" : "blue",
         width: "auto",
         height: "100vh",
-        marginTop: "75px",
+        marginTop: isDesktopOrLaptop ? '0' : "3vh",
         marginRight: isDesktopOrLaptop ? "75px" : "0",
         marginLeft: isDesktopOrLaptop ? "80px" : "0",
       }}
