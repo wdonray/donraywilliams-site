@@ -3,9 +3,11 @@ import { Button, Typography } from "@material-ui/core";
 import CenterContainer from "./CenterContainer";
 import useStyles, { NormalButton, LightButton } from "../style/HomeStyle";
 import homeIll from "../data/home_ill.svg";
+import { useHistory } from "react-router-dom";
 
-const Home = ({ history, direction, isDesktopOrLaptop, config }) => {
+const Home = ({ direction, isDesktopOrLaptop, config }) => {
   const classes = useStyles();
+  let history = useHistory();
   return (
     <CenterContainer>
       <div
