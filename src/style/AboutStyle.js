@@ -8,9 +8,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "left",
     padding: "1vh 5vw 30vh 5vw",
     display: 'flex',
-    "@media (min-device-width: 1224px)": {
-      padding: "10vh 5vw 0 5vw",
-    },
   },
   content: {
     letterSpacing: "0.1em",

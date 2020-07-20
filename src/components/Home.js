@@ -15,7 +15,7 @@ const Home = ({ direction, config }) => {
         style={{
           flexDirection: direction,
           alignItems: direction === "row" ? "flex-start" : "center",
-          justifyContent: direction === "row" ? "center" : "space-between",
+          justifyContent: direction === "row" ? "center" : "space-evenly",
         }}
       >
         <div className={classes.item}>
