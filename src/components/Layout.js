@@ -36,7 +36,14 @@ const Layout = () => {
   }, []);
 
   return (
-    <React.Fragment>
+    <div
+      style={{
+        position: "relative",
+        minHeight: "100vh",
+        overflowX: "hidden",
+        minWidth: "95vw",
+      }}
+    >
       <Header
         isDesktopOrLaptop={isDesktopOrLaptop}
         direction={direction}
@@ -55,12 +62,30 @@ const Layout = () => {
         direction={direction}
         config={config}
       />
-      <RunParticleSim
-        screenWidth={window.innerWidth}
-        screenHeight={window.innerHeight}
-      />
-      <Footer />
-      {_.map(
+      <div>
+        <RunParticleSim
+          screenWidth={window.innerWidth}
+          screenHeight={window.innerHeight}
+        />
+      </div>
+      <Switch>
+        {_.map(config.navLinks, (x) => (
+          <Route
+            exact={x.url === "/"}
+            path={x.url}
+            key={x.url}
+            render={() => (
+              <x.component
+                histroy={history}
+                isDesktopOrLaptop={isDesktopOrLaptop}
+                direction={direction}
+                config={config}
+              />
+            )}
+          />
+        ))}
+      </Switch>
+      {/* {_.map(
         transitions,
         ({ item, props, key }) =>
           item && (
@@ -84,8 +109,9 @@ const Layout = () => {
               </Switch>
             </animated.div>
           )
-      )}
-    </React.Fragment>
+      )} */}
+      <Footer />
+    </div>
   );
 };
 export default Layout;

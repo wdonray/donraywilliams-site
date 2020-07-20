@@ -10,13 +10,12 @@ const Home = ({ direction, config }) => {
   let history = useHistory();
   return (
     <CenterContainer>
-
       <div
         className={classes.root}
         style={{
           flexDirection: direction,
           alignItems: direction === "row" ? "flex-start" : "center",
-          justifyContent: direction === "row" ? "center" : "space-around",
+          justifyContent: direction === "row" ? "center" : "space-between",
         }}
       >
         <div className={classes.item}>

@@ -43,6 +43,63 @@ export default {
     },
   ],
 
+  experience: [
+    {
+      name: "Stuller",
+      position: "Software Engineer 1",
+      location: "Lafayette, LA",
+      timeWorked: "Feb. 2019​ - Apr. 2020",
+      description: [
+        "Rebuilt, designed and implemented an application for Admin usage of administering licenses.",
+        "Created an application for displaying each of our current server statuses.",
+        "Developed a full-scale app for tracking of Rewards and Shipment statuses.",
+        "Updated old in-house applications.",
+        "Built applications using React or React-Native that would communicate with our back-end.",
+        "Used a ticketing system to log work (Jira).",
+        "Procured on-the-job knowledge of front-end and back-end tasks.",
+        "Gained experience with Amazon Web Services, Node.js, React, React-Native, Type-script, Redux, Serverless, etc.",
+      ],
+    },
+    {
+      name: "BUH! Gaming",
+      position: "Software Engineer",
+      location: "Remote",
+      timeWorked: "July 2018​ - Jan. 2019",
+      description: [
+        "Collaborated with team members to develop a MOBA game using Unity.",
+        "Assisted in a long-term development project moving towards Steam integration.",
+        "Distributed work through a ticket system (Assembla).",
+        "Constructed a functional user interface for a new game mode.",
+        "Tested completed tickets, discussed current ticket progress, and assigned new tickets during weekly team meetings.",
+        "Performed constant documentation and research",
+      ],
+    },
+    {
+      name: "Tantrum Lab",
+      position: "Interactive Content Programmer",
+      location: "Lafayette, LA",
+      timeWorked: "Oct. 2018​ - Dec. 2018",
+      description: [
+        "Built a decision tree for AI animations in Unity, created animators.",
+        "Assisted in a long-term development project moving towards Steam integration.",
+        "Created Virtual Experience job training as well as different modes for more specific training.",
+        "Set up events for game completion logic.",
+      ],
+    },
+    {
+      name: "Academy of Interactive Entertainment",
+      position: "​​Game Programmer Camp Instructor / Tutor",
+      location: "Lafayette, LA",
+      timeWorked: "June 2017​ - July 2017 / Sept. 2018 - Nov. 2018",
+      description: [
+        "Managed a classroom of 15 students aged 8 to 17 years old.",
+        "Taught content to introduce students to Unity, Visual Studios, and C# as well as simple production techniques.",
+        "Showed students how to build an executable and composed a small quiz for them.",
+        "Instructed students using lectures and live demonstrations as well as one-on-one instruction.",
+      ],
+    },
+  ],
+
   navLinks: [
     {
       name: "Home",
@@ -82,6 +139,7 @@ export default {
     white: "#ffffffff",
     red: "#e06666ff",
     lightGreen: "#66e066",
+    lightNavy: '#172a45',
     redSplitComplementary: {
       teal: "#66e0e0",
       green: "#a3e066",

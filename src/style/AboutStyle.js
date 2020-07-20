@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
     "@media (min-device-width: 1224px)": {
       width: '15vw',
     },
-
   },
   item: {
     display: "flex",

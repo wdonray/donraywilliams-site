@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
     alignItems: 'center',
     flexDirection: "column",
     width: "100vw",
-    position: "fixed",
+    position: "absolute",
     bottom: 0,
     zIndex: 10,
     marginBottom: '2vh'
