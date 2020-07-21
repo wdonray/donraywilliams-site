@@ -1,7 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 
-const CenterContainer = ({ children }) => {
+const CenterContainer = ({ children, minHeight }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1224px)",
   });
@@ -10,7 +10,7 @@ const CenterContainer = ({ children }) => {
       style={{
         // backgroundColor: isDesktopOrLaptop ? "red" : "blue",
         width: "auto",
-        minHeight: "100vh",
+        minHeight: minHeight ? minHeight : "100vh",
         marginTop: isDesktopOrLaptop ? '0' : "3vh",
         marginRight: isDesktopOrLaptop ? "75px" : "0",
         marginLeft: isDesktopOrLaptop ? "80px" : "0",

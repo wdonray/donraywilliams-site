@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   messageInput: {
     width: "100%",
     height: "10vh",
-    display: 'flex',
+    display: "flex",
     flexDirection: "column",
     alignItems: "center",
   },
@@ -105,8 +105,8 @@ export const NormalButton = withStyles((theme) => ({
     color: config.colors.white,
     textTransform: "none",
     backgroundColor: config.colors.blue,
-    marginTop: '1vh',
-    alignSelf: 'center'
+    marginTop: "1vh",
+    alignSelf: "center",
   },
 }))(Button);
 

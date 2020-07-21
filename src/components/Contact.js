@@ -60,7 +60,7 @@ const Contact = ({ direction, config }) => {
   }, [isActive, seconds]);
 
   return (
-    <CenterContainer>
+    <CenterContainer minHeight={'115vh'}>
       <div
         className={classes.root}
         style={{
