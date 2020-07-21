@@ -1,5 +1,5 @@
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button, Link } from "@material-ui/core";
 import config from "../data/config";
 
 const useStyles = makeStyles((theme) => ({
@@ -109,5 +109,17 @@ export const NormalButton = withStyles((theme) => ({
     alignSelf: "center",
   },
 }))(Button);
+
+export const SocialLink = withStyles((theme) => ({
+  root: {
+    padding: "10px",
+    letterSpacing: "0.1em",
+    color: config.colors.white,
+    transition: "color 0.3s ease",
+    "&:hover": {
+      color: config.colors.blue,
+    }
+  },
+}))(Link);
 
 export default useStyles;
