@@ -10,8 +10,9 @@ import {
   responsiveFontSizes,
 } from "@material-ui/core/styles";
 import config from "../src/data/config";
-
+import 'react-toastify/dist/ReactToastify.css';
 import { BrowserRouter as Router } from "react-router-dom";
+
 let theme = createMuiTheme({
   typography: {
     h1: {

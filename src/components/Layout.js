@@ -10,6 +10,7 @@ import SidePanels from "./SidePanels";
 import { useMediaQuery } from "react-responsive";
 import { useHistory } from "react-router-dom";
 import { RunParticleSim, PopulateParticleArray } from "./FloatingParticles";
+import { ToastContainer } from 'react-toastify';
 
 const Layout = () => {
   const location = useLocation();
@@ -44,6 +45,7 @@ const Layout = () => {
         minWidth: "95vw",
       }}
     >
+      <ToastContainer/>
       <Header
         isDesktopOrLaptop={isDesktopOrLaptop}
         direction={direction}
