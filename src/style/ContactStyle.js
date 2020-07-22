@@ -62,13 +62,45 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "space-between",
   },
-  messageText: { color: config.colors.white },
+  messageText: {
+    color: config.colors.white,
+    width: "90vw",
+    borderColor: 'transparent',
+    backgroundColor: "#2D3748",
+    height: "45vh",
+    borderRadius: "4px",
+    fontFamily: "Gotham SSm A, Gotham SSm B, sans-serif",
+    fontSize: "1rem",
+    fontWeight: "400",
+    lineHeight: "normal",
+    outline: "none",
+    boxShadow: "transparent",
+    transition:
+      "0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out",
+    "&:hover": {
+      borderColor: config.colors.blue,
+    },
+    "&:focus": {
+      borderColor: config.colors.blue,   
+    },
+    "& input": {
+      backgroundColor: 'white'
+    },
+    "@media (min-device-width: 1224px)": {
+      width: "30vw",
+      height: "30vh",
+    },
+  },
   messageInput: {
-    width: "100%",
-    height: "10vh",
+    width: "100vw",
+    height: "60vh",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    "@media (min-device-width: 1224px)": {
+      height: "85vh",
+      width: "95vw",
+    },
   },
 }));
 
@@ -118,7 +150,7 @@ export const SocialLink = withStyles((theme) => ({
     transition: "color 0.3s ease",
     "&:hover": {
       color: config.colors.blue,
-    }
+    },
   },
 }))(Link);
 

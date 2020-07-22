@@ -104,16 +104,9 @@ const Contact = ({ direction, config }) => {
             />
           </div>
           <div className={classes.messageInput}>
-            <CustomText
-              InputProps={{
-                className: classes.messageText,
-              }}
-              fullWidth
-              size={"medium"}
-              rows={12}
-              multiline
-              label="Message"
-              variant="outlined"
+            <textarea
+              placeholder={"Message"}
+              className={classes.messageText}
               value={message}
               onChange={(event) => setMessage(event.target.value)}
             />
@@ -144,9 +137,7 @@ const Contact = ({ direction, config }) => {
               target="_blank"
               href={`${config.socialMedia[0].url}/donraywilliams-backend`}
             >
-              <Typography variant={"caption"}>
-                Source Code
-              </Typography>
+              <Typography variant={"caption"}>Source Code</Typography>
             </SocialLink>
           </div>
         </div>
