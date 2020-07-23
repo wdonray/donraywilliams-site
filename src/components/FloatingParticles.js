@@ -39,7 +39,7 @@ export const DrawParticle = ({ particle }) => {
       updatePos();
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [size]);
   return (
     <div
       style={{
