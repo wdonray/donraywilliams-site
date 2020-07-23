@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Typography } from "@material-ui/core";
 import CenterContainer from "./CenterContainer";
 import useStyles from "../style/AboutStyle";
@@ -8,7 +8,6 @@ import * as _ from "lodash";
 const About = ({ history, direction, isDesktopOrLaptop, config }) => {
   const classes = useStyles();
   // let keyWords = ["AIE", "Stuller"];
-
   let colorKeywords = (data) => {
     var parts = data.split(/(\Stuller+\b)/gi);
     for (var i = 1; i < parts.length; i += 2) {

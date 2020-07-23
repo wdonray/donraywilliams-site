@@ -80,4 +80,14 @@ export const EmailLink = withStyles((theme) => ({
   },
 }))(Link);
 
+export const ColorLink = withStyles((theme) => ({
+  root: {
+    letterSpacing: "0.1em",
+    color: config.colors.white,
+    "&:hover": {
+      color: config.colors.redSplitComplementary.teal,
+    },
+  },
+}))(Link);
+
 export default useStyles;

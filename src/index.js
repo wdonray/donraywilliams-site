@@ -10,7 +10,7 @@ import {
   responsiveFontSizes,
 } from "@material-ui/core/styles";
 import config from "../src/data/config";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router } from "react-router-dom";
 
 let theme = createMuiTheme({
@@ -55,8 +55,8 @@ let theme = createMuiTheme({
       fontSize: ".6rem",
       "@media (min-device-width: 1224px)": {
         fontSize: ".8rem",
-      }
-    }
+      },
+    },
   },
   palette: {
     background: {
@@ -64,21 +64,19 @@ let theme = createMuiTheme({
     },
   },
   button: {
-    textTransform: 'none'
-  }
+    textTransform: "none",
+  },
 });
 
 // theme = responsiveFontSizes(theme);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router>
-        <Layout />
-      </Router>
-    </ThemeProvider>
-  </React.StrictMode>,
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <Router>
+      <Layout />
+    </Router>
+  </ThemeProvider>,
   document.getElementById("root")
 );
 

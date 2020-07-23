@@ -1,13 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Typography } from "@material-ui/core";
 import CenterContainer from "./CenterContainer";
-import useStyles, { NormalButton, LightButton } from "../style/HomeStyle";
+import useStyles, {
+  NormalButton,
+  LightButton,
+  ColorLink,
+} from "../style/HomeStyle";
 import homeIll from "../data/home_ill.svg";
-import { useHistory } from "react-router-dom";
 
 const Home = ({ direction, config }) => {
   const classes = useStyles();
-  let history = useHistory();
   return (
     <CenterContainer>
       <div
@@ -30,21 +32,16 @@ const Home = ({ direction, config }) => {
               {config.siteDescription}
             </Typography>
             <div className={classes.buttonContainer}>
-              <NormalButton
-                size={"large"}
-                className={classes.button}
-                variant="contained"
-                onClick={() => history.push(config.navLinks[3].url)}
-              >
-                <Typography variant="body2">See my work</Typography>
-              </NormalButton>
-              <LightButton
-                className={classes.button}
-                variant="contained"
-                onClick={() => history.push(config.navLinks[1].url)}
-              >
-                <Typography variant="body2">Look at my skills</Typography>
-              </LightButton>
+              <ColorLink underline="none" href={config.navLinks[3].url}>
+                <NormalButton className={classes.button} variant="contained">
+                  <Typography variant="body2">See my work</Typography>
+                </NormalButton>
+              </ColorLink>
+              <ColorLink underline="none" href={config.navLinks[1].url}>
+                <LightButton className={classes.button} variant="contained">
+                  <Typography variant="body2">Look at my skills</Typography>
+                </LightButton>
+              </ColorLink>
             </div>
           </div>
         </div>
