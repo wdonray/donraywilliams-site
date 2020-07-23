@@ -1,6 +1,5 @@
 import React from "react";
 import * as _ from "lodash";
-import "../style/CenterContainerStyle.css";
 export let ParticleArray = [];
 
 // Particle Object, contains values

@@ -1,16 +1,14 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import "../style/CenterContainerStyle.css";
-import { CSSTransition } from "react-transition-group";
 
 const CenterContainer = ({ children, minHeight }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1224px)",
   });
   const [showMessage, setShowMessage] = React.useState(false);
-  
+
   React.useEffect(() => {
-    setShowMessage(true);
+    setTimeout(() => setShowMessage(true), 100);
   }, []);
 
   return (
@@ -18,19 +16,14 @@ const CenterContainer = ({ children, minHeight }) => {
       style={{
         width: "auto",
         minHeight: minHeight ? minHeight : "100vh",
-        marginTop: '10vh',
+        marginTop: "10vh",
         marginRight: isDesktopOrLaptop ? "75px" : "0",
         marginLeft: isDesktopOrLaptop ? "80px" : "0",
+        opacity: showMessage ? 1 : 0,
+        transition: 'all 300ms ease-in'
       }}
     >
-      <CSSTransition
-        in={showMessage}
-        timeout={300}
-        unmountOnExit
-        classNames="fade"
-      >
-        {children}
-      </CSSTransition>
+      {children}
     </div>
   );
 };

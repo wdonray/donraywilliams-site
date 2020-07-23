@@ -4,10 +4,7 @@ import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 import Layout from "./components/Layout";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import {
-  ThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import config from "../src/data/config";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -70,12 +67,14 @@ let theme = createMuiTheme({
 // theme = responsiveFontSizes(theme);
 
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <Router>
-      <Layout />
-    </Router>
-  </ThemeProvider>,
+  <React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Layout />
+      </Router>
+    </ThemeProvider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

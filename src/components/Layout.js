@@ -7,7 +7,7 @@ import config from "../data/config";
 import SidePanels from "./SidePanels";
 import { useMediaQuery } from "react-responsive";
 import { useHistory } from "react-router-dom";
-import { RunParticleSim} from "./FloatingParticles";
+import { RunParticleSim } from "./FloatingParticles";
 import { ToastContainer } from "react-toastify";
 
 const Layout = () => {
@@ -36,7 +36,7 @@ const Layout = () => {
         direction={direction}
         config={config}
       />
-      <div id='ParticleContainer'>
+      <div id="ParticleContainer">
         <RunParticleSim />
       </div>
       <Switch>
