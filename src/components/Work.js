@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { Button, Typography } from "@material-ui/core";
+import React from "react";
 import CenterContainer from "./CenterContainer";
 import useStyles from "../style/WorkStyle";
-import * as _ from "lodash";
 import UnderConstruction from  "../data/UnderConstruction.svg";
 
 const Work = ({ direction, config }) => {

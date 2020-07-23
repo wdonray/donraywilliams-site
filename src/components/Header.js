@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   Toolbar,
   Typography,
@@ -33,12 +33,6 @@ const Header = ({ isDesktopOrLaptop, config, history }) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  const [show, set] = useState(false);
-
-  useEffect(() => {
-    set(true);
-  }, []);
 
   return (
     <div className={classes.root}>

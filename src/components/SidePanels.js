@@ -5,10 +5,8 @@ import SideComponent from "./SideComponent";
 import Icon from "@material-ui/core/Icon";
 import { loadCSS } from "fg-loadcss";
 import { Typography } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
 
-const SidePanels = ({ direction, isDesktopOrLaptop, config }) => {
-  let history = useHistory();
+const SidePanels = ({ isDesktopOrLaptop, config }) => {
   const classes = useStyles();
   React.useEffect(() => {
     const node = loadCSS(

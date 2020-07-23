@@ -7,7 +7,6 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import {
   ThemeProvider,
   createMuiTheme,
-  responsiveFontSizes,
 } from "@material-ui/core/styles";
 import config from "../src/data/config";
 import "react-toastify/dist/ReactToastify.css";

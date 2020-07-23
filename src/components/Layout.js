@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Switch, Route } from "react-router-dom";

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import CenterContainer from "./CenterContainer";
 import useStyles, {
   CustomText,
