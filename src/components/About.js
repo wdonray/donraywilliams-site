@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 import CenterContainer from "./CenterContainer";
 import useStyles from "../style/AboutStyle";
-import TempPhoto from "../data/TempPhoto.svg";
+import selfPhoto from "../data/selfPhoto.jpg";
 import * as _ from "lodash";
 
 const About = ({ history, direction, isDesktopOrLaptop, config }) => {
@@ -54,10 +54,20 @@ const About = ({ history, direction, isDesktopOrLaptop, config }) => {
             ))}
           </ul>
         </div>
-        <div>
+        <div
+          style={{
+            height: "35vw",
+            width: "35vw",
+            backgroundColor: "#bbb",
+            borderRadius: "50%",
+            flexShrink: 0,
+            overflow: "hidden",
+            position: "relative",
+          }}
+        >
           <img
             className={classes.selfPhoto}
-            src={TempPhoto}
+            src={selfPhoto}
             alt={"selfPhoto"}
           />
         </div>

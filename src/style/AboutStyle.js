@@ -4,10 +4,10 @@ import config from "../data/config";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    height: 'auto',
+    height: "auto",
     textAlign: "left",
     padding: "1vh 5vw 30vh 5vw",
-    display: 'flex',
+    display: "flex",
   },
   content: {
     letterSpacing: "0.1em",
@@ -18,32 +18,34 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: "0.1em",
     color: config.colors.white,
     whiteSpace: "pre-wrap",
-    width: '25vw',
+    width: "25vw",
     "@media (min-device-width: 1224px)": {
-      width: '15vw',
+      width: "15vw",
     },
   },
   item: {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    flexDirection: 'column'
+    flexDirection: "column",
   },
   skillsList: {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    flexDirection: 'column',
-    flexWrap: 'wrap',
-    height: '10vh',
-    width: '25vw'
+    flexDirection: "column",
+    flexWrap: "wrap",
+    height: "10vh",
+    width: "25vw",
   },
   selfPhoto: {
-    width: "40vw",
+    position: "absolute",
+    width: "75vw",
     height: "auto",
-    "@media (min-device-width: 1224px)": {
-      width: "40vw",
-    },
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    objectFit: "fill",
   },
 }));
 
