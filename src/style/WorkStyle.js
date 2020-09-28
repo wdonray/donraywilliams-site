@@ -50,11 +50,10 @@ const useStyles = makeStyles((theme) => ({
   projectImage: {
     width: "90vw",
     height: "auto",
-
     marginBottom: "5vh",
     borderRadius: "5px",
     "@media (min-device-width: 1224px)": {
-      width: "45vw",
+      width: "45%",
       marginRight: "5vw",
     },
   },
