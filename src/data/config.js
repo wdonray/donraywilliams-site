@@ -3,6 +3,8 @@ import About from "../components/About";
 import Experience from "../components/Experience";
 import Work from "../components/Work";
 import Contact from "../components/Contact";
+import LOLTracker from "../data/LOLTracker.png";
+import UnderConstruction from "../data/UnderConstruction.svg";
 
 export default {
   siteTitle: "Donray Williams | Software Engineer",
@@ -99,6 +101,64 @@ export default {
     },
   ],
 
+  portfolioProjects: [
+    {
+      Name: "League of Legends Live Tracker",
+      Status: "In Progress",
+      Link: "https://www.leaguelivestats.net/",
+      Github: [
+        {
+          Info: "Front-end",
+          Link: "https://github.com/wdonray/lol-live-tracker",
+        },
+        {
+          Info: "Back-end",
+          Link: "https://github.com/wdonray/lol-live-tracker-backend",
+        },
+      ],
+      Tech: ["Riot API", "React", "Axios", "Redux", "AWS"],
+      Info:
+        "Allows you to search any player from the game League of Legends and displays live stats and active matches. Get a deeper look into how you play.",
+      Image: LOLTracker,
+    },
+    {
+      Name: "Candle Shop",
+      Status: "In Progress",
+      Link: "/work",
+      Github: [
+        {
+          Info: "Full App",
+          Link: "https://github.com/wdonray/lol-live-tracker-backend",
+        },
+      ],
+      Tech: ["React-Native", "Stripe", "Expo", "Amplify"],
+      Info: "An app that allows you to buy various types of candles.",
+      Image: UnderConstruction,
+    },
+  ],
+
+  researchProjects: [
+    {
+      Name: "React-NodeJS",
+      Link: "https://github.com/wdonray/react-nodejs-test",
+      Tech: ["React", "Express", "NodeJS"],
+      Info:
+        "Creating a server with Express and NodeJS that connects to React. Calling the endpoints with axios",
+    },
+    {
+      Name: "Node Crash Course",
+      Link: "https://github.com/wdonray/node-crash-course",
+      Tech: ["React", "Express", "NodeJS"],
+      Info: "A crash course on NodeJS. Testing out what I can and cannot do.",
+    },
+    {
+      Name: "Angular To-Do-List",
+      Link: "https://github.com/wdonray/angular-crash-todolist",
+      Tech: ["Angular", "HTML", "Typescript"],
+      Info: "First time using Angular, created a to do list application.",
+    },
+  ],
+
   navLinks: [
     {
       name: "Home",
@@ -138,7 +198,7 @@ export default {
     white: "#ffffffff",
     red: "#e06666ff",
     lightGreen: "#66e066",
-    lightNavy: '#172a45',
+    lightNavy: "#172a45",
     redSplitComplementary: {
       teal: "#66e0e0",
       green: "#a3e066",

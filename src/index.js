@@ -23,6 +23,12 @@ let theme = createMuiTheme({
         fontSize: "4rem",
       },
     },
+    h3: {
+      fontSize: "1.2rem",
+      "@media (min-device-width: 1224px)": {
+        fontSize: "3rem",
+      },
+    },
     h6: {
       fontSize: ".8rem",
       "@media (min-device-width: 1224px)": {
