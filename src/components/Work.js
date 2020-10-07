@@ -106,7 +106,7 @@ const Work = ({ direction }) => {
                 className={classes.researchProjectContainer}
               >
                 <SocialLink
-                style={{position: "absolute", top: 0,right: 0}}
+                  style={{ position: "absolute", top: 0, right: 0 }}
                   underline="none"
                   target="_blank"
                   rel="nofollow noopener noreferrer"
@@ -117,14 +117,14 @@ const Work = ({ direction }) => {
                 </SocialLink>
                 <CardHeader
                   title={
-                    <Typography variant="body1" style={{ color: "white" }}>
+                    <Typography variant="h6" style={{ color: "white" }}>
                       {item.Name}
                     </Typography>
                   }
                 />
                 <CardContent>
                   <Typography
-                    variant="caption"
+                    variant="body2"
                     style={{ opacity: 0.7 }}
                     className={classes.header}
                   >

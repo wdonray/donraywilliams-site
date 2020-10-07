@@ -139,18 +139,24 @@ export default {
 
   researchProjects: [
     {
+      Name: "Vue To-Do-List",
+      Link: "https://github.com/wdonray/vue-crash-todolist",
+      Tech: ["Vue", "Vuex", "Axios"],
+      Info: "First time using Vue, created a to do list application.",
+    },
+    {
       Name: "React-NodeJS",
       Link: "https://github.com/wdonray/react-nodejs-test",
-      Tech: ["React", "Express", "NodeJS"],
+      Tech: ["React", "Express", "NodeJS", "Axios"],
       Info:
         "Creating a server with Express and NodeJS that connects to React. Calling the endpoints with axios",
     },
-    {
-      Name: "Node Crash Course",
-      Link: "https://github.com/wdonray/node-crash-course",
-      Tech: ["React", "Express", "NodeJS"],
-      Info: "A crash course on NodeJS. Testing out what I can and cannot do.",
-    },
+    // {
+    //   Name: "Node Crash Course",
+    //   Link: "https://github.com/wdonray/node-crash-course",
+    //   Tech: ["React", "Express", "NodeJS"],
+    //   Info: "A crash course on NodeJS. Testing out what I can and cannot do.",
+    // },
     {
       Name: "Angular To-Do-List",
       Link: "https://github.com/wdonray/angular-crash-todolist",
