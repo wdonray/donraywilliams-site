@@ -4,6 +4,7 @@ import Experience from "../components/Experience";
 import Work from "../components/Work";
 import Contact from "../components/Contact";
 import LOLTracker from "../data/LOLTracker.png";
+import LOLTrackerGif from "../data/LOLTrackerGif.gif";
 import UnderConstruction from "../data/UnderConstruction.svg";
 
 export default {
@@ -120,6 +121,7 @@ export default {
       Info:
         "Allows you to search any player from the game League of Legends and displays live stats and active matches. Get a deeper look into how you play.",
       Image: LOLTracker,
+      Video: LOLTrackerGif
     },
     {
       Name: "Candle Shop",

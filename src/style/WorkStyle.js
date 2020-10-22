@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
   },
   projectImage: {
+    transition: "0.3",
     width: "90vw",
     height: "auto",
     marginBottom: "5vh",

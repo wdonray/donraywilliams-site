@@ -15,6 +15,7 @@ import { SocialLink } from "../style/SidePanelsStyle";
 
 const Work = ({ direction }) => {
   const classes = useStyles();
+  const [zoom, setZoom] = React.useState(null);
   return (
     <CenterContainer>
       <div
@@ -43,7 +44,16 @@ const Work = ({ direction }) => {
                 key={item.Link}
               >
                 <img
-                  src={item.Image}
+                  onMouseEnter={() => setZoom(item.Name)}
+                  onMouseLeave={() => setZoom(null)}
+                  src={
+                    zoom === item.Name
+                      ? item.Video
+                        ? item.Video
+                        : item.Image
+                      : item.Image
+                  }
+                  // style={{ width: zoom === item.Name ? "100%" : "45%"}}
                   className={classes.projectImage}
                   alt={`No ${item.Name}`}
                 />
@@ -104,6 +114,7 @@ const Work = ({ direction }) => {
               <Card
                 style={{ position: "relative" }}
                 className={classes.researchProjectContainer}
+                key={item.Name}
               >
                 <SocialLink
                   style={{ position: "absolute", top: 0, right: 0 }}
