@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
   selfPhoto: {
     position: "absolute",
-    width: "75vw",
+    width: "50vw",
     height: "auto",
     top: "50%",
     left: "50%",

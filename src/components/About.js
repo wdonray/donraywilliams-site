@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 import CenterContainer from "./CenterContainer";
 import useStyles from "../style/AboutStyle";
-import selfPhoto from "../data/selfPhoto.jpg";
+import selfPhoto from "../data/selfPhoto.jpeg";
 import * as _ from "lodash";
 
 const About = ({ history, direction, isDesktopOrLaptop, config }) => {
@@ -63,6 +63,7 @@ const About = ({ history, direction, isDesktopOrLaptop, config }) => {
             flexShrink: 0,
             overflow: "hidden",
             position: "relative",
+            border: "2px solid #e06666ff"
           }}
         >
           <img
